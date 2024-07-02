@@ -1,14 +1,17 @@
-from typing import Optional
-
 from fastapi import FastAPI
+import uvicorn
 
+# predict is a function which includes the ai chatbot model.
+# predict function takes the input text and returns output text
+# predict function is defined inside the file - chatBot {temporary - just for example}
+from chatbot import chat
 app = FastAPI()
 
+@app.get('/')
+def predict(data : str):
 
-@app.get("/")
-async def root():
-    return {"message": "Hello World"}
+    # getting the chat Output
+    output_text = chat(data)
 
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Optional[str] = None):
-    return {"item_id": item_id, "q": q}
+    # Return the Result
+    return { 'chatBot' : output_text }
