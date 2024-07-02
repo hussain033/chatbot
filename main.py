@@ -7,7 +7,7 @@ import uvicorn
 from chatbot import chat
 app = FastAPI()
 
-@app.get('/')
+@app.post('/')
 def predict(data : str):
 
     # getting the chat Output
