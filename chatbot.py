@@ -4,7 +4,7 @@ from langchain_core.output_parsers import StrOutputParser
 llm = HuggingFaceEndpoint(
     repo_id="HuggingFaceH4/zephyr-7b-alpha",
     task="text-generation",
-    huggingfacehub_api_token="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",
+    huggingfacehub_api_token="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",
     temperature = 0.6,
     max_new_tokens = 80,
     return_full_text = False
